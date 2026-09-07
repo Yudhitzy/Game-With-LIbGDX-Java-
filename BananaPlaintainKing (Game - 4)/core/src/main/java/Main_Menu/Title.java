@@ -38,15 +38,14 @@ public class Title {
     public void update(float delta) {
         animationTime += delta;
         rotation = MAX_ROTATION * (float) Math.sin(animationTime * ROTATION_SPEED);
-        
+
     }
 
     public void IntroAnimation() {
-        float animationDuration = 3f; 
+        float animationDuration = 3f;
         float t = Math.min(1f, animationTime / animationDuration);
-        float easedT = t * t * (3 - 2 * t); 
+        float easedT = t * t * (3 - 2 * t);
         IntroPos = MathUtils.lerp(Gdx.graphics.getBackBufferHeight(), position.y, easedT);
-        System.out.println(IntroPos);
         if (IntroPos < 0f) {
             IntroPos = 0f;
         }
