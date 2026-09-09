@@ -1,8 +1,8 @@
 package Main_Menu;
+import GameplayScreen.InGameScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -49,6 +49,7 @@ public class MainMenu implements Screen {
                 &&
                 (Gdx.input.getY() > StarTextPos.y)) {
                 System.out.println("Warping GamePlay");
+                game.setScreen(new InGameScreen(game));
             }
         }
     }
