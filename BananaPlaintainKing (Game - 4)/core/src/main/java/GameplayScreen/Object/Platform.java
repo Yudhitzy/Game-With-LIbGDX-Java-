@@ -13,7 +13,7 @@ public class Platform {
     public Platform(float x, float y) {
         position = new Vector2(x, y);
     }
-    //Firsr 100 50
+
     public void render(ShapeRenderer shape) {
         shape.begin(ShapeRenderer.ShapeType.Filled);
         shape.setColor(Color.BLUE);
