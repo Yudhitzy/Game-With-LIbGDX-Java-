@@ -60,7 +60,6 @@ public class InGameScreen implements Screen {
     public void render(float delta) {
         ScreenUtils.clear(0,0,0,1);
         player.update(delta, platforms,ladders);
-        //player.LadderCheck(ladder);
         for (Platform platform : platforms) {
             platform.render(game.shape);
         }
