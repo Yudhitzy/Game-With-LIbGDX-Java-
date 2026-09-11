@@ -41,7 +41,27 @@ public class Player {
             onGround = false;
         }
 
-        // gravity
+        CanLadder = false;
+        for (Ladder l :ladders) {
+            Vector2 pos = l.getPosition();
+            float width_ladders = l.getWidth();
+            float height_ladders = l.getHeight();
+            if (position.x + width > pos.x + 10f && position.x + 10f < pos.x + width_ladders) {
+                if (position.y + height > pos.y && position.y < pos.y + height_ladders) {
+                    CanLadder = true;
+                }
+
+            }
+        }
+
+        if (CanLadder) {
+            if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                move += 1;
+                position.y += move * MOVE_SPEED * delta;
+            }
+            return;
+        }
+
         velocity.y += GRAVITY * delta;
 
         float oldY = position.y;
