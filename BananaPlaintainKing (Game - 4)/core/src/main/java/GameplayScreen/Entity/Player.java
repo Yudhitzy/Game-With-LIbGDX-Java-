@@ -48,10 +48,9 @@ public class Player {
             float width_ladders = l.getWidth();
             float height_ladders = l.getHeight();
             if (position.x + width > pos.x + 10f && position.x + 10f < pos.x + width_ladders) {
-                if (position.y + height > pos.y && position.y < pos.y + height_ladders) {
+                if (position.y + height > pos.y + 10f && position.y < pos.y + height_ladders + 10f) {
                     CanLadder = true;
                 }
-
             }
         }
 
